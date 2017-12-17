@@ -110,7 +110,7 @@ npm test
 
 结果如图：
 
-![hello-test-run-result](https://github.com/liuxian496/keep/blob/developer/img/hello-test-run-result.png)
+![hello-test-run-result.png](https://github.com/liuxian496/keep/blob/developer/img/hello-test-run-result.png)
 
 第一个单元测试运行成功了，下面尝试对React组件进行测试。
 
@@ -196,7 +196,7 @@ npm test
 ```
 会出现异常信息，如图：
 
-![need-babel](https://github.com/liuxian496/keep/blob/developer/img/need-babel.png)
+![need-babel.png](https://github.com/liuxian496/keep/blob/developer/img/need-babel.png)
 
 import是ES6特性，如果没有被编译就会出现图中的异常。现在需要引入babel配合mocha完成编译工作。
 
@@ -267,7 +267,7 @@ npm test
 
 测试成功，如图：
 
-![successed](https://github.com/liuxian496/keep/blob/developer/img/successed.png)
+![successed.png](https://github.com/liuxian496/keep/blob/developer/img/successed.png)
 
 mocha默认使用SPEC reporter进行输出，在测试用例比较多时，查看比较困难。我们来更换一种输出模式
 
@@ -280,7 +280,8 @@ mocha默认使用SPEC reporter进行输出，在测试用例比较多时，查�
 ```
 
 如图：
-[nyna](https://github.com/liuxian496/keep/blob/developer/img/nyna.png)
+
+![nyna.png](https://github.com/liuxian496/keep/blob/developer/img/nyna.png)
 
 ## Shallow Rendering
 
@@ -365,9 +366,7 @@ npm test
 ```
 
 成功运行，如图：
-![image](https://github.com/liuxian496/keep/blob/developer/img)
-
-下面演示一下利用karam，在真实浏览器中运行测试。
+![mount-successed.png](https://github.com/liuxian496/keep/blob/developer/img/mount-successed.png)
 
 
 
