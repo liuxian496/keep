@@ -239,7 +239,7 @@ npm test
 
 会看到新的异常信息，如图：
 
-![need-enzyme-adapter.png](https://github.com/liuxian496/keep/blob/developer/img/need-enzyme-adapter.png)
+![need-enzyme-adapter.png](https://github.com/liuxian496/keep/blob/developer/img/need-babel.png)
 
 接下来，对enzyme adapter进行配置
 
@@ -364,4 +364,14 @@ npm test
 ```
 
 成功运行，如图：
-![mount-successed](https://github.com/liuxian496/keep/blob/developer/mount-successed.png)
+![image](https://github.com/liuxian496/keep/blob/developer/img)
+
+下面演示一下利用karam，在真实浏览器中运行测试。
+
+
+
+
+
+
+
+
