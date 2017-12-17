@@ -266,6 +266,7 @@ npm test
 ```
 
 测试成功，如图：
+
 ![successed](https://github.com/liuxian496/keep/blob/developer/img/successed.png)
 
 mocha默认使用SPEC reporter进行输出，在测试用例比较多时，查看比较困难。我们来更换一种输出模式
