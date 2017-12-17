@@ -196,7 +196,7 @@ npm test
 ```
 会出现异常信息，如图：
 
-![need-babel](../img/need-babel.png)
+![need-babel](https://github.com/liuxian496/keep/blob/developer/img/need-babel.png)
 
 import是ES6特性，如果没有被编译就会出现图中的异常。现在需要引入babel配合mocha完成编译工作。
 
@@ -239,7 +239,7 @@ npm test
 
 会看到新的异常信息，如图：
 
-![need-enzyme-adapter.png](../img/need-babel.png)
+![need-enzyme-adapter.png](https://github.com/liuxian496/keep/blob/developer/img/need-enzyme-adapter.png)
 
 接下来，对enzyme adapter进行配置
 
@@ -266,7 +266,7 @@ npm test
 ```
 
 测试成功，如图：
-![successed](../img/successed.png)
+![successed](https://github.com/liuxian496/keep/blob/developer/img/successed.png)
 
 mocha默认使用SPEC reporter进行输出，在测试用例比较多时，查看比较困难。我们来更换一种输出模式
 
@@ -279,7 +279,7 @@ mocha默认使用SPEC reporter进行输出，在测试用例比较多时，查�
 ```
 
 如图：
-[nyna](../img/nyna.png)
+[nyna](https://github.com/liuxian496/keep/blob/developer/img/nyna.png)
 
 ## Shallow Rendering
 
@@ -364,4 +364,4 @@ npm test
 ```
 
 成功运行，如图：
-![image](http://note.youdao.com/favicon.ico)
+![mount-successed](https://github.com/liuxian496/keep/blob/developer/mount-successed.png)
