@@ -239,7 +239,7 @@ npm test
 
 会看到新的异常信息，如图：
 
-![need-enzyme-adapter.png](https://github.com/liuxian496/keep/blob/developer/img/need-babel.png)
+![need-enzyme-adapter.png](https://github.com/liuxian496/keep/blob/developer/img/need-enzyme-adapter.png)
 
 接下来，对enzyme adapter进行配置
 
