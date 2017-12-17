@@ -110,7 +110,7 @@ npm test
 
 结果如图：
 
-![hello-test-run-result](http://note.youdao.com/favicon.ico)
+![hello-test-run-result](https://github.com/liuxian496/keep/blob/developer/img/hello-test-run-result.png)
 
 第一个单元测试运行成功了，下面尝试对React组件进行测试。
 
