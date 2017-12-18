@@ -1,0 +1,38 @@
+{
+  "name": "keep",
+  "version": "1.0.0",
+  "description": "React unit test",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "react",
+    "test",
+    "enzyme",
+    "mocha"
+  ],
+  "scripts": {
+    "test": "mocha --require babel-register --require ./test/mocha.opts.js --reporter nyan"
+  },
+  "author": "Wu Fengqiang",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "jsdom": "^11.5.1",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^4.0.1",
+    "react-test-renderer": "^15.6.2",
+    "sinon": "^4.1.3"
+  }
+}
