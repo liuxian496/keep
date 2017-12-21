@@ -1,9 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { expect } from 'chai';
-import { shallow } from 'enzyme';
-
 import App from '../src/App';
 import Apple from '../src/Apple';
 

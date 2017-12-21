@@ -1,10 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import sinon from 'sinon';
-import { expect } from 'chai';
-import { mount } from 'enzyme';
-
 import App from '../src/App';
 
 describe('<App />', () => {
