@@ -366,6 +366,7 @@ npm test
 ```
 
 成功运行，如图：
+
 ![mount-successed.png](https://github.com/liuxian496/keep/blob/developer/img/mount-successed.png)
 
 ## 简化import
@@ -481,6 +482,7 @@ karma start
 ```
 
 点击浏览器右上方的debug，点击F12，之后查看console，如图：
+
 ![need-webpack.png](https://github.com/liuxian496/keep/blob/master/img/need-webpack.png)
 
 因为没有对文件编译，chrome不能识别require和import语法。我们引入webpack，解决这个问题。与webpack结合使用也是karma的一个优势，能更好的对实际项目进行测试。我们先来安装webpack。
@@ -553,6 +555,7 @@ karma start
 ```
 
 点击浏览器右上方的debug，点击F12，之后查看console，如图：
+
 ![need-new-mocha-config.png](https://github.com/liuxian496/keep/blob/master/img/need-new-mocha-config.png)
 
 为了简化测试编写，我们将测试文件依赖的公共模块移动到mocha.opts.js，由于文件中包含jsdom，我们屏蔽了它。所以出现上方的异常，我们需要一个新的配置来解决这个异常。
@@ -607,4 +610,4 @@ karma start
 ```
 
 点击浏览器右上方的debug，查看debug页面，如图：
-![karma-successed.png](https://github.com/liuxian496/keep/blob/master/img/arma-successed.png)
+![karma-successed.png](https://github.com/liuxian496/keep/blob/master/img/karma-successed.png)
