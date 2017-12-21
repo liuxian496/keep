@@ -174,12 +174,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { expect } from 'chai';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import App from '../src/App';
 import Apple from '../src/Apple';
-
-var assert = require('assert');
 
 describe('<App />', () => {
     it('Apple without crashing in shallow mode.', () => {
@@ -302,8 +300,6 @@ import { mount } from 'enzyme';
 
 import App from '../src/App';
 
-var assert = require('assert');
-
 describe('<App />', () => {
     it('App componentDidMount is called with error.', function () {
         sinon.spy(App.prototype, 'componentDidMount');
@@ -368,10 +364,189 @@ npm test
 成功运行，如图：
 ![mount-successed.png](https://github.com/liuxian496/keep/blob/developer/img/mount-successed.png)
 
+## 简化测试用例的import
+
+每个测试都要引入react，enzyme，chai比较繁琐。把它们抽取到mocha.opts.js中，就能避免每个文件都重新引入
+
+打开mocha.opts.js，修改为：
+
+```
+import { configure, shallow, mount} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+configure({ adapter: new Adapter() });
+
+import { expect } from 'chai';
+import sinon from 'sinon';
+
+import 'jsdom-global/register';
+//require('jsdom-global')();
+
+global.expect = expect;
+global.sinon = sinon;
+global.shallow = shallow;
+global.mount = mount;
+```
+
+同时去掉测试文件中不必要的import
+
+下面使用karam和mocha，配置chrome运行环境：
+
+## 安karma-cli
+
+在根目录下执行
+
+```
+npm install -g karma-cli
+```
 
 
+这样就可以在任何地方运行karma了。
 
+## 安装karma
 
+在根目录下执行
 
+```
+npm i --save-dev karma
+```
 
+接下来创建karma config文件
 
+## 创建karma config文件
+
+在根目录执行
+
+```
+karma init
+```
+
+根据提示进行配置，配置完成后的文件如下：
+
+```
+module.exports = function(config) {
+  config.set({
+    basePath: '',
+
+    frameworks: ['mocha'],
+
+    files: [
+      'test/*.test.js',
+      'test/**/*.test.js'
+    ],
+
+    exclude: [
+      'test/mocha.opts.js'
+    ],
+
+    preprocessors: {
+    },
+
+    reporters: ['progress'],
+
+    port: 9876,
+
+    colors: true,
+
+    logLevel: config.LOG_INFO,
+
+    autoWatch: true,
+
+    browsers: ['Chrome'],
+
+    singleRun: false,
+
+    concurrency: Infinity
+  })
+}
+```
+在根目录下执行
+
+```
+karma start 
+```
+
+查看chrome浏览器控制台
+![need-webpack.png](https://github.com/liuxian496/keep/blob/master/img/need-webpack.png)
+
+我们需要引入webpack对文件进行编译，这样在浏览器中才能解析require和import语法。
+
+## 安装webpack
+
+在根目录执行
+
+```
+npm i --save-dev webpack
+```
+
+在根目录下创建webpack.config.js，配置如下：
+
+```
+const path = require('path');
+
+module.exports = {
+    //将根目录设置成默认目录
+    context: path.join(__dirname, '../'),
+    entry: undefined,
+    output: {
+        pathinfo: true
+    },
+    module: {
+        //加载器配置
+        loaders: [
+            { 
+                test: /\.js$/,
+                //使用babel-loader进行编译
+                exclude:/(node_modules)/,
+                loader: 'babel-loader' 
+            }
+        ]
+    },
+};
+```
+
+## 安装babel-loader
+
+在根目录运行
+
+```
+npm i --save-dev babel-loader
+```
+
+## 在karma 配置文件配置webpack
+
+打开karma.conf.js，添加webpack配置，代码如下：
+
+```
+var webpackConfig = require('./webpack.config.js');
+
+module.exports = function(config) {
+  config.set({
+    ...
+    preprocessors: {
+      'test/*.js': ['webpack','sourcemap']
+    },
+
+    webpack: webpackConfig,
+    ...
+  })
+}
+```
+
+在根目录下执行
+
+```
+karma start
+```
+
+查看终端异常信息，如图：
+![need-karma-webpack.png](https://github.com/liuxian496/keep/blob/master/img/need-webpack.png)
+
+我们需要karma-webpack完成karm和webpack的结合
+
+## 安装karma-webpack
+
+在根目录下执行
+
+```
+npm i --save-dev karma-webpack
+```

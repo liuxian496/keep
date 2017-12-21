@@ -7,8 +7,6 @@ import { mount } from 'enzyme';
 
 import App from '../src/App';
 
-var assert = require('assert');
-
 describe('<App />', () => {
     it('App componentDidMount is called with error.', function () {
         sinon.spy(App.prototype, 'componentDidMount');
